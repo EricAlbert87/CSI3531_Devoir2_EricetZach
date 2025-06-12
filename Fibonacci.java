@@ -5,7 +5,6 @@ public class Fibonacci {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-
         System.out.print("Entrez le nombre de termes de Fibonacci à générer: ");
         int n = scanner.nextInt();
         scanner.close();
@@ -20,9 +19,9 @@ public class Fibonacci {
         });
 
         fibThread.start();
-
+        // Attente que le thread enfant termine
         try {
-            fibThread.join(); // Attente que le thread enfant termine
+            fibThread.join(); 
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
