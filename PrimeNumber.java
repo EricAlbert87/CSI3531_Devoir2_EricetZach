@@ -7,7 +7,7 @@ public class PrimeNumber {
         int max = scanner.nextInt();
 
         Thread primeThread = new Thread(() -> {
-            System.out.println("Nombres premiers jusqu’à " + max + " :");
+            System.out.println("Nombres premiers jusqu'à " + max + " :");
             for (int i = 2; i <= max; i++) {
                 if (isPrime(i)) {
                     System.out.print(i + " ");
