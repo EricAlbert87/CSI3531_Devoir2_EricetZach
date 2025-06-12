@@ -1,34 +1,34 @@
 import java.util.Scanner;
 
-public class Fibonacci{
-    private static int[] fibonacciSequence;
+public class Fibonacci {
+    private static int[] arr;
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
         System.out.print("Entrez le nombre de termes de Fibonacci à générer : ");
-        int n = scanner.nextInt();
-        fibonacciSequence = new int[n];
+        int n = sc.nextInt();
+        arr = new int[n];
 
-        Thread fibonacciGenerator = new Thread(() -> {
-            if (n > 0) fibonacciSequence[0] = 0;
-            if (n > 1) fibonacciSequence[1] = 1;
+        Thread t = new Thread(() -> {
+            if (n > 0) arr[0] = 0;
+            if (n > 1) arr[1] = 1;
             for (int i = 2; i < n; i++) {
-                fibonacciSequence[i] = fibonacciSequence[i - 1] + fibonacciSequence[i - 2];
+                arr[i] = arr[i - 1] + arr[i - 2];
             }
         });
 
-        fibonacciGenerator.start();
-        scanner.close();
+        t.start();
+        sc.close();
 
         try {
-            fibonacciGenerator.join(); // Attente que le thread enfant termine
+            t.join(); // Attente que le thread enfant termine
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
 
         System.out.println("Suite de Fibonacci :");
-        for (int num : fibonacciSequence) {
-            System.out.print(num + " ");
+        for (int x : arr) {
+            System.out.print(x + " ");
         }
         System.out.println();
     }
