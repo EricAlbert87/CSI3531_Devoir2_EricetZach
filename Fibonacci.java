@@ -5,7 +5,7 @@ public class Fibonacci {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        System.out.print("Entrez le nombre de termes de Fibonacci à générer : ");
+        System.out.print("Entrez le nombre de termes de Fibonacci à générer: ");
         int n = sc.nextInt();
         arr = new int[n];
 
@@ -26,7 +26,7 @@ public class Fibonacci {
             e.printStackTrace();
         }
 
-        System.out.println("Suite de Fibonacci :");
+        System.out.println("Suite de Fibonacci:");
         for (int x : arr) {
             System.out.print(x + " ");
         }

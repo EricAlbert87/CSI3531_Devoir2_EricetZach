@@ -3,11 +3,11 @@ import java.util.Scanner;
 public class PrimeNumber {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Entrez un nombre : ");
+        System.out.print("Entrez un nombre: ");
         int max = scanner.nextInt();
 
         Thread primeThread = new Thread(() -> {
-            System.out.println("Nombres premiers jusqu'à " + max + " :");
+            System.out.println("Nombres premiers jusqu'à " + max + ":");
             for (int i = 2; i <= max; i++) {
                 if (isPrime(i)) {
                     System.out.print(i + " ");
