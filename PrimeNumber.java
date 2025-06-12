@@ -5,6 +5,7 @@ public class PrimeNumber {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Entrez un nombre: ");
         int max = scanner.nextInt();
+        scanner.close();
 
         Thread primeThread = new Thread(() -> {
             System.out.println("Nombres premiers jusqu'à " + max + ":");
@@ -17,7 +18,6 @@ public class PrimeNumber {
         });
 
         primeThread.start();
-        scanner.close();
     }
 
     private static boolean isPrime(int n) {
