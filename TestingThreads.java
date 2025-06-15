@@ -1,5 +1,5 @@
 
-public class PrimeNumber {
+public class TestingThreads {
     public static void main(String[] args) {
         int max;
         try {
