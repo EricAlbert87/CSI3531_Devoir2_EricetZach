@@ -23,7 +23,9 @@ public class Fibonacci {
         try {
             fibThread.join(); 
         } catch (InterruptedException e) {
-            e.printStackTrace();
+            System.err.println("Le thread a été interrompu: " + e); // print error message
+        } catch (Exception e) {
+            System.err.println("Une erreur s'est produite: " + e);
         }
 
         System.out.println("Suite de Fibonacci:");
