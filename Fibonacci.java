@@ -1,20 +1,4 @@
 
-class FibonacciThread extends Thread {
-    private int[] fib;
-    public FibonacciThread(int[] fib) {
-        this.fib = fib;
-    }
-    
-    @Override
-    public void run() {
-        if (this.fib.length > 0) this.fib[0] = 0;
-        if (this.fib.length > 1) this.fib[1] = 1;
-        for (int i = 2; i < this.fib.length; i++) {
-            this.fib[i] = this.fib[i - 1] + this.fib[i - 2];
-        }
-    }
-}
-
 public class Fibonacci {
     private static int[] fib;
 
@@ -51,5 +35,21 @@ public class Fibonacci {
             System.out.print(x + " ");
         }
         System.out.println("]");
+    }
+}
+
+class FibonacciThread extends Thread {
+    private int[] fib;
+    public FibonacciThread(int[] fib) {
+        this.fib = fib;
+    }
+    
+    @Override
+    public void run() {
+        if (this.fib.length > 0) this.fib[0] = 0;
+        if (this.fib.length > 1) this.fib[1] = 1;
+        for (int i = 2; i < this.fib.length; i++) {
+            this.fib[i] = this.fib[i - 1] + this.fib[i - 2];
+        }
     }
 }
