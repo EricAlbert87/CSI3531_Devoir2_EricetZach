@@ -12,19 +12,30 @@ public class PrimeNumber {
             return;
         }
 
-        Thread primeThread = new Thread(() -> {
-            System.out.println("Nombres premiers jusqu'à " + max + ":");
+        PrimeNumberThread primeThread = new PrimeNumberThread(max);
+
+        // Start the thread to calculate prime numbers
+        primeThread.start();
+    }
+}
+
+class PrimeNumberThread extends Thread {
+    private int max;
+    public PrimeNumberThread(int max) {
+        this.max = max;
+    }
+
+    @Override
+    public void run(){    
+    System.out.println("Nombres premiers jusqu'à " + this.max + ":");
             System.out.print("[ ");
-            for (int i = 2; i <= max; i++) {
+            for (int i = 2; i <= this.max; i++) {
                 if (isPrime(i)) {
                     System.out.print(i + " ");
                 }
             }
             System.out.println("]");
-        });
-
-        primeThread.start();
-    }
+        }
 
     private static boolean isPrime(int n) {
         // Trial division method
