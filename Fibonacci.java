@@ -9,6 +9,9 @@ public class Fibonacci {
         } catch (NumberFormatException e) {
             System.err.println("Argument invalide, veuillez entrer un entier.");
             return;
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.err.println("Veuillez fournir un argument entier.");
+            return;
         }
         
         //tableau partagé
